@@ -1,8 +1,15 @@
 <script setup lang="ts">
-const a = ref(1);
 defineProps<{
   msg: string
 }>()
+const count = ref(0)
+function increment() {
+  count.value++
+}
+
+function decrease() {
+  count.value--
+}
 </script>
 
 <template>
@@ -11,8 +18,18 @@ defineProps<{
     <h3>
       You’ve successfully created a project with
       <a target="_blank" href="https://vitejs.dev/">Vite</a> +
-      <a target="_blank" href="https://vuejs.org/">Vue 3</a>.
+      <a target="_blank" href="https://vuejs.org/">Vue 3</a>+
+      <a target="_blank" href="https://vueuse.org/">VueUse</a>.
     </h3>
+    <div>
+      Count:{{ count }}
+      <button @click="increment">
+        Click me to add count
+      </button>
+      <button @click="decrease">
+        Click me to decrease count
+      </button>
+    </div>
   </div>
 </template>
 
@@ -33,6 +50,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
