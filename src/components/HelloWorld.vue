@@ -22,18 +22,25 @@ function decrease() {
       <a target="_blank" href="https://vueuse.org/">VueUse</a>.
     </h3>
     <div>
-      Count:{{ count }}
+      <div>
+        Count:{{ count }}
+      </div>
       <button @click="increment">
-        Click me to add count
+        add count
       </button>
       <button @click="decrease">
-        Click me to decrease count
+        decrease count
       </button>
     </div>
   </div>
 </template>
 
 <style scoped>
+a {
+  text-decoration: none;
+  color: rgb(30, 218, 30);
+}
+
 h1 {
   font-weight: 500;
   font-size: 2.6rem;
@@ -49,11 +56,7 @@ h3 {
   text-align: center;
 }
 
-@media (min-width: 1024px) {
-
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+.greetings {
+  text-align: center;
 }
 </style>
