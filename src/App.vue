@@ -3,29 +3,19 @@
 </script>
 
 <template>
-  <router-view></router-view>
+  <NavBar></NavBar>
+  <main>
+    <router-view></router-view>
+    <Footer></Footer>
+  </main>
 </template>
 
 <style>
 @import "./assets/base.css";
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
+  margin: 0;
+  padding: 0;
   font-weight: normal;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
 }
 </style>

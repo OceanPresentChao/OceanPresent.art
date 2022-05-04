@@ -4,7 +4,11 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
+    ElSpace: typeof import('element-plus/es')['ElSpace']
+    Footer: typeof import('./components/Footer.vue')['default']
+    NavBar: typeof import('./components/NavBar.vue')['default']
+    ToggleTheme: typeof import('./components/ToggleTheme.vue')['default']
   }
 }
 
