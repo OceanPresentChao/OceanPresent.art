@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Pages from 'vite-plugin-pages'
+import Markdown from 'vite-plugin-md'
 import path from 'path';
 import {
   ElementPlusResolver,
@@ -12,13 +14,16 @@ import {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      include: [/\.vue$/, /\.md$/], // <--
+    }),
     Components({
       // ui库解析器
       resolvers: [ElementPlusResolver()],
       // 指定组件位置，默认是src/components
       dirs: ['src/components'],
-      extensions: ['vue'],
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       // 配置文件生成位置
       dts: 'src/components.d.ts'
     }),
@@ -29,6 +34,15 @@ export default defineConfig({
     }),
     createStyleImportPlugin({
       resolves: [ElementPlusResolve()]
+    }),
+    Pages({
+      extensions: ['vue', 'md'],
+      pagesDir: 'pages',
+    }),
+    Markdown({
+      markdownItOptions: {
+        quotes: '""\'\'',
+      },
     })
   ],
   resolve: {
