@@ -1,11 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify/vue': ^3.2.1
   '@types/node': ^16.11.25
   '@vitejs/plugin-vue': ^2.2.2
   '@vue/tsconfig': ^0.1.3
   '@vueuse/core': ^8.2.3
   consola: ^2.15.3
+  dayjs: ^1.11.1
   element-plus: ^2.1.11
   markdown-it: ^13.0.1
   typescript: ~4.5.5
@@ -25,10 +27,12 @@ dependencies:
   vue: mirrors.tencent.com/vue/3.2.33
 
 devDependencies:
+  '@iconify/vue': 3.2.1_vue@3.2.33
   '@types/node': mirrors.tencent.com/@types/node/16.11.33
   '@vitejs/plugin-vue': mirrors.tencent.com/@vitejs/plugin-vue/2.3.1_vite@2.9.7+vue@3.2.33
   '@vue/tsconfig': 0.1.3_@types+node@16.11.33
   consola: 2.15.3
+  dayjs: mirrors.tencent.com/dayjs/1.11.1
   element-plus: mirrors.tencent.com/element-plus/2.1.11_vue@3.2.33
   typescript: mirrors.tencent.com/typescript/4.5.5
   unplugin-auto-import: 0.6.9_6qfftb5sbvokbj5gkjcfwcaoo4
@@ -74,6 +78,14 @@ packages:
     resolution: {integrity: sha512-b+prvQgJt8pieaKYMSJBXHxX/DYwdLsAWxKYqnO5dO2V4oo/TYBZJAUQCVNjTWWsrs6o4VDrNcP9+E70HAhJdw==}
     dependencies:
       '@floating-ui/core': 0.6.2
+    dev: true
+
+  /@iconify/vue/3.2.1_vue@3.2.33:
+    resolution: {integrity: sha512-c4R6ZgFo1JrJ8aPMMgOPgfU7lBswihMGR+yWe/P4ZukC3kTkeT4+lkt9Pc/itVFMkwva/S/7u9YofmYv57fnNQ==}
+    peerDependencies:
+      vue: 3.x
+    dependencies:
+      vue: mirrors.tencent.com/vue/3.2.33
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -511,9 +523,22 @@ packages:
     resolution: {integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=}
     dev: true
 
+  /fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /functions-have-names/1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
+
+  /graceful-fs/4.2.10:
+    resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
+    dev: true
+    optional: true
 
   /header-case/2.0.4:
     resolution: {integrity: sha512-H/vuk5TEEVZwrR0lp2zed9OCo1uAILMlx0JEMgC26rzyJJ3N1v6XkwHHXJQdR2doSjcGPM6OKPYoJgf0plJ11Q==}
@@ -1264,7 +1289,7 @@ packages:
       normalize-path: mirrors.tencent.com/normalize-path/3.0.0
       readdirp: mirrors.tencent.com/readdirp/3.6.0
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   mirrors.tencent.com/csstype/2.6.20:
@@ -1570,16 +1595,6 @@ packages:
       universalify: mirrors.tencent.com/universalify/2.0.0
     dev: true
 
-  mirrors.tencent.com/fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/fsevents/-/fsevents-2.3.2.tgz}
-    name: fsevents
-    version: 2.3.2
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   mirrors.tencent.com/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/function-bind/-/function-bind-1.1.1.tgz}
     name: function-bind
@@ -1876,7 +1891,7 @@ packages:
     dependencies:
       universalify: mirrors.tencent.com/universalify/2.0.0
     optionalDependencies:
-      graceful-fs: mirrors.tencent.com/graceful-fs/4.2.10
+      graceful-fs: 4.2.10
     dev: true
 
   mirrors.tencent.com/kind-of/6.0.3:
@@ -2165,7 +2180,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   mirrors.tencent.com/run-parallel/1.2.0:
@@ -2392,7 +2407,7 @@ packages:
       resolve: mirrors.tencent.com/resolve/1.22.0
       rollup: mirrors.tencent.com/rollup/2.71.1
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   mirrors.tencent.com/vue-demi/0.12.5_vue@3.2.33:

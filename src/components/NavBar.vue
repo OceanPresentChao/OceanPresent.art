@@ -1,50 +1,58 @@
 <template>
     <header class="header">
-        <router-link to="/" style="position:fixed">
-            <el-avatar size="large" shape="circle" src="http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640" fit="cover">
+        <router-link to="/" class="avater">
+            <el-avatar size="large" shape="circle" :src="AVATER_URL" fit="cover">
             </el-avatar>
         </router-link>
+        <div class="spacer"></div>
         <nav class="nav">
-            <div class="spacer"></div>
-            <el-space size="large">
-                <router-link to="/posts">
-                    <span>BLOG</span>
+            <el-space size="large" style="align-items:center;">
+                <router-link to="/posts" title="blog">
+                    <span>Blog</span>
                 </router-link>
-                <router-link to="/projects">
-                    <span>Projects</span>
+                <router-link to="/projects" title="project">
+                    <span>Project</span>
+                </router-link>
+                <router-link to="/projects" title="bookmark">
+                    <Icon icon="carbon:bookmark" width="20" />
                 </router-link>
                 <a href="https://github.com/OceanPresentChao" target="_blank" title="GitHub">
-                    <span>GitHub</span>
+                    <Icon icon="codicon:github-alt" width="20" />
                 </a>
                 <a href="https://space.bilibili.com/6389878" target="_blank" title="bilibili">
-                    <span>bilibili</span>
+                    <Icon icon="ri:bilibili-line" width="25" />
                 </a>
                 <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="ZhiHu">
-                    <span>知乎</span>
+                    <Icon icon="fa6-brands:zhihu" width="30" />
                 </a>
-                <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="ZhiHu">
-                    <span>RSS</span>
+                <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="RSS">
+                    <Icon icon="bi:rss" width="20" />
                 </a>
+                <toggle-theme></toggle-theme>
             </el-space>
         </nav>
     </header>
 </template>
 
 <script setup lang="ts">
-
+const AVATER_URL = "http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640"
 </script>
 
 <style scoped>
 .header {
     margin: 0;
     z-index: 27;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: large;
+}
+
+.avater {
+    flex: none;
 }
 
 .nav {
-    width: 100%;
     padding: 2rem;
-    display: flex;
-    flex-flow: row nowrap;
     box-sizing: border-box;
 }
 
@@ -55,6 +63,7 @@
     transition: opacity 0.2s ease;
     opacity: 0.7;
     outline: none;
+    word-break: keep-all;
 }
 
 .spacer {

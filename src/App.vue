@@ -11,7 +11,8 @@
 </template>
 
 <style>
-@import "./assets/base.css";
+@import "@/style/base.css";
+@import "@/style/main.css";
 
 #app {
   margin: 0;
