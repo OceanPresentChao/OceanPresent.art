@@ -4,7 +4,8 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
-import path from 'path';
+import path, { resolve } from 'path';
+import matter from "gray-matter"
 import {
   ElementPlusResolver,
 } from 'unplugin-vue-components/resolvers'
@@ -38,8 +39,19 @@ export default defineConfig({
     Pages({
       extensions: ['vue', 'md'],
       pagesDir: 'pages',
+      extendRoute(route) {
+        const path = resolve(__dirname, route.component.slice(1))
+        // console.log(path);
+        if (!path.includes("projects.md")) {
+          const md = matter.read(path)
+          const { data } = matter(md)
+          // console.log(data);
+          route.meta = Object.assign(route.meta || {}, { frontmatter: data })
+        }
+      },
     }),
     Markdown({
+      wrapperComponent: 'Post',
       markdownItOptions: {
         quotes: '""\'\'',
       },

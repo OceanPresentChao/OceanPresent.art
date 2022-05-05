@@ -9,6 +9,7 @@ specifiers:
   consola: ^2.15.3
   dayjs: ^1.11.1
   element-plus: ^2.1.11
+  gray-matter: ^4.0.3
   markdown-it: ^13.0.1
   typescript: ~4.5.5
   unplugin-auto-import: ^0.6.9
@@ -34,6 +35,7 @@ devDependencies:
   consola: 2.15.3
   dayjs: mirrors.tencent.com/dayjs/1.11.1
   element-plus: mirrors.tencent.com/element-plus/2.1.11_vue@3.2.33
+  gray-matter: 4.0.3
   typescript: mirrors.tencent.com/typescript/4.5.5
   unplugin-auto-import: 0.6.9_6qfftb5sbvokbj5gkjcfwcaoo4
   unplugin-vue-components: mirrors.tencent.com/unplugin-vue-components/0.18.5_vite@2.9.7+vue@3.2.33
@@ -540,6 +542,16 @@ packages:
     dev: true
     optional: true
 
+  /gray-matter/4.0.3:
+    resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
+    engines: {node: '>=6.0'}
+    dependencies:
+      js-yaml: mirrors.tencent.com/js-yaml/3.14.1
+      kind-of: mirrors.tencent.com/kind-of/6.0.3
+      section-matter: 1.0.0
+      strip-bom-string: 1.0.0
+    dev: true
+
   /header-case/2.0.4:
     resolution: {integrity: sha512-H/vuk5TEEVZwrR0lp2zed9OCo1uAILMlx0JEMgC26rzyJJ3N1v6XkwHHXJQdR2doSjcGPM6OKPYoJgf0plJ11Q==}
     dependencies:
@@ -799,7 +811,7 @@ packages:
       '@rollup/pluginutils': mirrors.tencent.com/@rollup/pluginutils/4.2.1
       '@types/markdown-it': mirrors.tencent.com/@types/markdown-it/12.2.3
       '@vue/runtime-core': mirrors.tencent.com/@vue/runtime-core/3.2.33
-      gray-matter: mirrors.tencent.com/gray-matter/4.0.3
+      gray-matter: 4.0.3
       markdown-it: mirrors.tencent.com/markdown-it/13.0.1
       vite: mirrors.tencent.com/vite/2.9.7
     dev: true
@@ -1203,7 +1215,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/argparse/1.0.10:
-    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/argparse/-/argparse-1.0.10.tgz}
+    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/argparse/-/argparse-1.0.10.tgz}
     name: argparse
     version: 1.0.10
     dependencies:
@@ -1533,7 +1545,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/esprima/4.0.1:
-    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/esprima/-/esprima-4.0.1.tgz}
+    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/esprima/-/esprima-4.0.1.tgz}
     name: esprima
     version: 4.0.1
     engines: {node: '>=4'}
@@ -1546,7 +1558,7 @@ packages:
     version: 2.0.2
 
   mirrors.tencent.com/extend-shallow/2.0.1:
-    resolution: {integrity: sha1-Ua99YUrZqfYQ6huvu5idaxxWiQ8=, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/extend-shallow/-/extend-shallow-2.0.1.tgz}
+    resolution: {integrity: sha1-Ua99YUrZqfYQ6huvu5idaxxWiQ8=, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/extend-shallow/-/extend-shallow-2.0.1.tgz}
     name: extend-shallow
     version: 2.0.1
     engines: {node: '>=0.10.0'}
@@ -1634,18 +1646,6 @@ packages:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/graceful-fs/-/graceful-fs-4.2.10.tgz}
     name: graceful-fs
     version: 4.2.10
-    dev: true
-
-  mirrors.tencent.com/gray-matter/4.0.3:
-    resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/gray-matter/-/gray-matter-4.0.3.tgz}
-    name: gray-matter
-    version: 4.0.3
-    engines: {node: '>=6.0'}
-    dependencies:
-      js-yaml: mirrors.tencent.com/js-yaml/3.14.1
-      kind-of: mirrors.tencent.com/kind-of/6.0.3
-      section-matter: 1.0.0
-      strip-bom-string: 1.0.0
     dev: true
 
   mirrors.tencent.com/has-bigints/1.0.2:
@@ -1771,7 +1771,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/is-extendable/0.1.1:
-    resolution: {integrity: sha1-YrEQ4omkcUGOPsNqYX1HLjAd/Ik=, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/is-extendable/-/is-extendable-0.1.1.tgz}
+    resolution: {integrity: sha1-YrEQ4omkcUGOPsNqYX1HLjAd/Ik=, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/is-extendable/-/is-extendable-0.1.1.tgz}
     name: is-extendable
     version: 0.1.1
     engines: {node: '>=0.10.0'}
@@ -1867,7 +1867,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/js-yaml/3.14.1:
-    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/js-yaml/-/js-yaml-3.14.1.tgz}
+    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/js-yaml/-/js-yaml-3.14.1.tgz}
     name: js-yaml
     version: 3.14.1
     hasBin: true
@@ -1895,7 +1895,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/kind-of/6.0.3:
-    resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/kind-of/-/kind-of-6.0.3.tgz}
+    resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/kind-of/-/kind-of-6.0.3.tgz}
     name: kind-of
     version: 6.0.3
     engines: {node: '>=0.10.0'}
@@ -2229,7 +2229,7 @@ packages:
     version: 1.4.8
 
   mirrors.tencent.com/sprintf-js/1.0.3:
-    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/sprintf-js/-/sprintf-js-1.0.3.tgz}
+    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/sprintf-js/-/sprintf-js-1.0.3.tgz}
     name: sprintf-js
     version: 1.0.3
     dev: true

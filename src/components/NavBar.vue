@@ -1,8 +1,7 @@
 <template>
     <header class="header">
         <router-link to="/" class="avater">
-            <el-avatar size="large" shape="circle" :src="AVATER_URL" fit="cover">
-            </el-avatar>
+            <span>OceanPresent</span>
         </router-link>
         <div class="spacer"></div>
         <nav class="nav">
@@ -13,7 +12,7 @@
                 <router-link to="/projects" title="project">
                     <span>Project</span>
                 </router-link>
-                <router-link to="/projects" title="bookmark">
+                <router-link to="/bookmarks" title="bookmark">
                     <Icon icon="carbon:bookmark" width="20" />
                 </router-link>
                 <a href="https://github.com/OceanPresentChao" target="_blank" title="GitHub">
@@ -35,7 +34,6 @@
 </template>
 
 <script setup lang="ts">
-const AVATER_URL = "http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640"
 </script>
 
 <style scoped>
@@ -45,10 +43,14 @@ const AVATER_URL = "http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640"
     display: flex;
     flex-flow: row nowrap;
     font-size: large;
+    align-items: center;
 }
 
 .avater {
     flex: none;
+    margin-left: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
 }
 
 .nav {
