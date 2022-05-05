@@ -17,6 +17,7 @@
 <style>
 @import "@/style/base.css";
 @import "@/style/main.css";
+@import "@/style/markdown.css";
 
 #app {
   margin: 0;

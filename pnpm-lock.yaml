@@ -2,6 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@iconify/vue': ^3.2.1
+  '@types/markdown-it': '*'
+  '@types/markdown-it-link-attributes': ^3.0.1
   '@types/node': ^16.11.25
   '@vitejs/plugin-vue': ^2.2.2
   '@vue/tsconfig': ^0.1.3
@@ -11,6 +13,11 @@ specifiers:
   element-plus: ^2.1.11
   gray-matter: ^4.0.3
   markdown-it: ^13.0.1
+  markdown-it-anchor: ^8.6.3
+  markdown-it-link-attributes: ^4.0.0
+  markdown-it-prism: ^2.2.4
+  prism-theme-vars: ^0.2.2
+  prismjs: ^1.28.0
   typescript: ~4.5.5
   unplugin-auto-import: ^0.6.9
   unplugin-vue-components: ^0.18.5
@@ -25,10 +32,13 @@ specifiers:
 dependencies:
   '@vueuse/core': mirrors.tencent.com/@vueuse/core/8.4.0_vue@3.2.33
   markdown-it: mirrors.tencent.com/markdown-it/13.0.1
+  prism-theme-vars: 0.2.2
   vue: mirrors.tencent.com/vue/3.2.33
 
 devDependencies:
   '@iconify/vue': 3.2.1_vue@3.2.33
+  '@types/markdown-it': 12.2.3
+  '@types/markdown-it-link-attributes': 3.0.1
   '@types/node': mirrors.tencent.com/@types/node/16.11.33
   '@vitejs/plugin-vue': mirrors.tencent.com/@vitejs/plugin-vue/2.3.1_vite@2.9.7+vue@3.2.33
   '@vue/tsconfig': 0.1.3_@types+node@16.11.33
@@ -36,6 +46,10 @@ devDependencies:
   dayjs: mirrors.tencent.com/dayjs/1.11.1
   element-plus: mirrors.tencent.com/element-plus/2.1.11_vue@3.2.33
   gray-matter: 4.0.3
+  markdown-it-anchor: 8.6.3_ea7kj7wzjkld5jo2noyjqxi764
+  markdown-it-link-attributes: 4.0.0
+  markdown-it-prism: 2.2.4
+  prismjs: 1.28.0
   typescript: mirrors.tencent.com/typescript/4.5.5
   unplugin-auto-import: 0.6.9_6qfftb5sbvokbj5gkjcfwcaoo4
   unplugin-vue-components: mirrors.tencent.com/unplugin-vue-components/0.18.5_vite@2.9.7+vue@3.2.33
@@ -108,10 +122,31 @@ packages:
       '@types/ms': 0.7.31
     dev: true
 
+  /@types/linkify-it/3.0.2:
+    resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
+    dev: true
+
   /@types/lodash-es/4.17.6:
     resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
     dependencies:
       '@types/lodash': mirrors.tencent.com/@types/lodash/4.14.182
+    dev: true
+
+  /@types/markdown-it-link-attributes/3.0.1:
+    resolution: {integrity: sha512-K8RnNb1q8j7rDOJbMF7AnlhCC/45BjrQ8z3WZWOrvkBIl8u9RXvmBdG/hfpnmK1JhhEZcmFEKWt+ilW1Mly+2Q==}
+    dependencies:
+      '@types/markdown-it': 12.2.3
+    dev: true
+
+  /@types/markdown-it/12.2.3:
+    resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
+    dependencies:
+      '@types/linkify-it': 3.0.2
+      '@types/mdurl': 1.0.2
+    dev: true
+
+  /@types/mdurl/1.0.2:
+    resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
     dev: true
 
   /@types/ms/0.7.31:
@@ -525,14 +560,6 @@ packages:
     resolution: {integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=}
     dev: true
 
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /functions-have-names/1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
@@ -636,6 +663,27 @@ packages:
       lodash-es: mirrors.tencent.com/lodash-es/4.17.21
     dev: true
 
+  /markdown-it-anchor/8.6.3_ea7kj7wzjkld5jo2noyjqxi764:
+    resolution: {integrity: sha512-3IiHYh/kJHY2IcuKv5qv+IKNxDwXjVoYQ5FvbBUPywcwCQ4ICLIw5z0QrhYBtcD7h88MfFK3zKAkABTvPMxm7A==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dependencies:
+      '@types/markdown-it': 12.2.3
+      markdown-it: mirrors.tencent.com/markdown-it/13.0.1
+    dev: true
+
+  /markdown-it-link-attributes/4.0.0:
+    resolution: {integrity: sha512-ssjxSLlLfQBkX6BvAx1rCPrx7ZoK91llQQvS3P7KXvlbnVD34OUkfXwWecN7su/7mrI/HOW0RI5szdJOIqYC3w==}
+    dev: true
+
+  /markdown-it-prism/2.2.4:
+    resolution: {integrity: sha512-7oQVppKjiZqVQo7s7eLTIs3o/0hdvqAWDW8lvRel6eUCGD4iXjKbSZjvdHZFA2ZnCkQUF47kbvtWZDVQrv7zyQ==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      prismjs: 1.28.0
+    dev: true
+
   /mdurl/1.0.1:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
 
@@ -652,6 +700,15 @@ packages:
     dependencies:
       dot-case: mirrors.tencent.com/dot-case/3.0.4
       tslib: mirrors.tencent.com/tslib/2.4.0
+    dev: true
+
+  /prism-theme-vars/0.2.2:
+    resolution: {integrity: sha512-EL9ifuU/F8tEldoCa2sspiiLWysCL54xDbf2gN/ubwdtbuJROqOGopG5kSwunapwaioT+jLUQ/Ky+7jnv62xJA==}
+    dev: false
+
+  /prismjs/1.28.0:
+    resolution: {integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==}
+    engines: {node: '>=6'}
     dev: true
 
   /promise/7.3.1:
@@ -809,7 +866,7 @@ packages:
     dependencies:
       '@antfu/utils': mirrors.tencent.com/@antfu/utils/0.5.1
       '@rollup/pluginutils': mirrors.tencent.com/@rollup/pluginutils/4.2.1
-      '@types/markdown-it': mirrors.tencent.com/@types/markdown-it/12.2.3
+      '@types/markdown-it': 12.2.3
       '@vue/runtime-core': mirrors.tencent.com/@vue/runtime-core/3.2.33
       gray-matter: 4.0.3
       markdown-it: mirrors.tencent.com/markdown-it/13.0.1
@@ -1053,31 +1110,10 @@ packages:
       picomatch: mirrors.tencent.com/picomatch/2.3.1
     dev: true
 
-  mirrors.tencent.com/@types/linkify-it/3.0.2:
-    resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/@types%2flinkify-it/-/linkify-it-3.0.2.tgz}
-    name: '@types/linkify-it'
-    version: 3.0.2
-    dev: true
-
   mirrors.tencent.com/@types/lodash/4.14.182:
     resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/@types%2flodash/-/lodash-4.14.182.tgz}
     name: '@types/lodash'
     version: 4.14.182
-    dev: true
-
-  mirrors.tencent.com/@types/markdown-it/12.2.3:
-    resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/@types%2fmarkdown-it/-/markdown-it-12.2.3.tgz}
-    name: '@types/markdown-it'
-    version: 12.2.3
-    dependencies:
-      '@types/linkify-it': mirrors.tencent.com/@types/linkify-it/3.0.2
-      '@types/mdurl': mirrors.tencent.com/@types/mdurl/1.0.2
-    dev: true
-
-  mirrors.tencent.com/@types/mdurl/1.0.2:
-    resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/@types%2fmdurl/-/mdurl-1.0.2.tgz}
-    name: '@types/mdurl'
-    version: 1.0.2
     dev: true
 
   mirrors.tencent.com/@types/node/16.11.33:
@@ -1301,7 +1337,7 @@ packages:
       normalize-path: mirrors.tencent.com/normalize-path/3.0.0
       readdirp: mirrors.tencent.com/readdirp/3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: mirrors.tencent.com/fsevents/2.3.2
     dev: true
 
   mirrors.tencent.com/csstype/2.6.20:
@@ -1606,6 +1642,16 @@ packages:
       jsonfile: mirrors.tencent.com/jsonfile/6.1.0
       universalify: mirrors.tencent.com/universalify/2.0.0
     dev: true
+
+  mirrors.tencent.com/fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/fsevents/-/fsevents-2.3.2.tgz}
+    name: fsevents
+    version: 2.3.2
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   mirrors.tencent.com/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/function-bind/-/function-bind-1.1.1.tgz}
@@ -2180,7 +2226,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: mirrors.tencent.com/fsevents/2.3.2
     dev: true
 
   mirrors.tencent.com/run-parallel/1.2.0:
@@ -2407,7 +2453,7 @@ packages:
       resolve: mirrors.tencent.com/resolve/1.22.0
       rollup: mirrors.tencent.com/rollup/2.71.1
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: mirrors.tencent.com/fsevents/2.3.2
     dev: true
 
   mirrors.tencent.com/vue-demi/0.12.5_vue@3.2.33:

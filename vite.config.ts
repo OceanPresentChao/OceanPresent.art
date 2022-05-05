@@ -6,6 +6,20 @@ import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
 import path, { resolve } from 'path';
 import matter from "gray-matter"
+import Anchor from 'markdown-it-anchor';
+import prism from 'markdown-it-prism';
+import LinkAttributes from 'markdown-it-link-attributes';
+import 'prismjs/components/prism-regex'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-xml-doc'
+import 'prismjs/components/prism-yaml'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-markdown'
+import 'prismjs/components/prism-java'
+import 'prismjs/components/prism-javadoclike'
+import 'prismjs/components/prism-javadoc'
+import 'prismjs/components/prism-jsdoc'
 import {
   ElementPlusResolver,
 } from 'unplugin-vue-components/resolvers'
@@ -55,6 +69,22 @@ export default defineConfig({
       markdownItOptions: {
         quotes: '""\'\'',
       },
+      markdownItSetup(md) {
+        md.use(prism)
+        md.use(Anchor, {
+          permalink: Anchor.permalink.linkInsideHeader({
+            symbol: '#',
+            renderAttrs: () => ({ 'aria-hidden': 'true' }),
+          }),
+        })
+        md.use(LinkAttributes, {
+          matcher: (link: string) => /^https?:\/\//.test(link),
+          attrs: {
+            target: '_blank',
+            rel: 'noopener',
+          },
+        })
+      }
     })
   ],
   resolve: {
