@@ -10,7 +10,7 @@ subtitle: Some of my favorite websites/tools that I recommend
 - [Google Font](https://fonts.google.com/)
 - [Font Squirrel](https://www.fontsquirrel.com/)
 
-#### Color
+### Color
 
 - [Adobe Color](https://color.adobe.com/)
 - [NIPPON COLORS - 日本の伝統色](https://nipponcolors.com/)
@@ -19,7 +19,7 @@ subtitle: Some of my favorite websites/tools that I recommend
 - [colorpoint](https://www.colorpoint.io/)
 - [UIgradient](https://uigradients.com/)
 
-#### UI/UX Design
+### UI/UX Design
 
 - [Tailwind Gradient Designer](https://tailwind-gradient-designer.csspost.com/)
 - [Open UI](https://open-ui.org/) - Comparison between different component frameworks
@@ -38,7 +38,7 @@ subtitle: Some of my favorite websites/tools that I recommend
 - [Bundle Phobia](https://bundlephobia.com/) - Check your npm package size
 - [transform](https://transform.tools/) - Collection of code transformers
 
-#### CSS
+### CSS
 
 - [Magic of CSS](https://adamschwartz.co/magic-of-css/)
 - [CSS Vocabulary](http://apps.workflower.fi/vocabs/css/en)

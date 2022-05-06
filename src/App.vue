@@ -11,11 +11,12 @@
       </transition>
     </router-view>
     <Footer></Footer>
+    <el-backtop :right="50" :bottom="50" />
   </main>
 </template>
 
 <style>
-@import "@/style/base.css";
+@import "@/style/prose.css";
 @import "@/style/main.css";
 @import "@/style/markdown.css";
 
@@ -35,17 +36,22 @@ a {
 }
 
 .trans-move {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .trans-enter-active,
 .trans-leave-active {
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 
 .trans-enter-from,
 .trans-leave-to {
   opacity: 0;
   transform: translateY(30px);
+}
+
+.img-center img {
+  display: block;
+  margin: auto;
 }
 </style>

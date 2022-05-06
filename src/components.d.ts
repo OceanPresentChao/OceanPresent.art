@@ -5,6 +5,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
+    ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElSpace: typeof import('element-plus/es')['ElSpace']
     Footer: typeof import('./components/Footer.vue')['default']
     ListPosts: typeof import('./components/ListPosts.vue')['default']

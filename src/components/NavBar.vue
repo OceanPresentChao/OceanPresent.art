@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header prose">
         <router-link to="/" class="avater">
             <span>OceanPresent</span>
         </router-link>
@@ -9,9 +9,9 @@
                 <router-link to="/posts" title="blog">
                     <span>Blog</span>
                 </router-link>
-                <router-link to="/projects" title="project">
+                <!-- <router-link to="/projects" title="project">
                     <span>Project</span>
-                </router-link>
+                </router-link> -->
                 <router-link to="/bookmarks" title="bookmark">
                     <Icon icon="carbon:bookmark" width="20" />
                 </router-link>
@@ -53,12 +53,16 @@
     font-size: 1.5rem;
 }
 
-.nav {
+.prose .nav {
     padding: 2rem;
     box-sizing: border-box;
 }
 
-.nav a {
+.prose a {
+    border: none;
+}
+
+.prose .nav a {
     cursor: pointer;
     text-decoration: none;
     color: inherit;
@@ -66,6 +70,11 @@
     opacity: 0.7;
     outline: none;
     word-break: keep-all;
+}
+
+.prose .nav a:hover {
+    opacity: 1;
+    text-decoration-color: inherit;
 }
 
 .spacer {

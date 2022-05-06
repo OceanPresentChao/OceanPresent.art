@@ -66,6 +66,7 @@ export default defineConfig({
     }),
     Markdown({
       wrapperComponent: 'Post',
+      wrapperClasses: "prose img-center",
       markdownItOptions: {
         quotes: '""\'\'',
       },
@@ -76,6 +77,7 @@ export default defineConfig({
             symbol: '#',
             renderAttrs: () => ({ 'aria-hidden': 'true' }),
           }),
+          permalinkBefore: true,
         })
         md.use(LinkAttributes, {
           matcher: (link: string) => /^https?:\/\//.test(link),

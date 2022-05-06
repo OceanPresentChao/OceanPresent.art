@@ -1,11 +1,13 @@
 <template>
-    <div class="wrapper">
-        <article ref="content">
+    <div class="post prose">
+        <article ref="content" style="margin-bottom: 2rem;">
             <slot />
         </article>
         <div v-if="route.path !== '/'">
             <router-link :to="route.path.split('/').slice(0, -1).join('/') || '/'">
-                Back
+                <span>
+                    <Icon icon="akar-icons:arrow-back" /> Back
+                </span>
             </router-link>
         </div>
     </div>
@@ -21,8 +23,12 @@ console.log(props);
 </script>
 
 <style scoped>
-.wrapper {
+.post {
     max-width: 60%;
     margin: 0 auto;
+}
+
+.prose .post a {
+    border: none;
 }
 </style>
