@@ -49,6 +49,10 @@ const AVATAR_URL = "http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640"
     text-align: center;
 }
 
+.avatar h2 {
+    margin-top: 0;
+}
+
 .desc {
     margin-left: 2rem;
 }

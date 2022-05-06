@@ -40,6 +40,7 @@
 </template>
 
 <script setup lang="ts">
+import dayjs from 'dayjs';
 
 interface Post extends Object {
     title?: string
@@ -58,11 +59,13 @@ const routes: Post[] = router.getRoutes().filter((item) =>
         path: item.path,
         ...(item.meta.frontmatter as Object)
     }
+}).sort((a: any, b: any) => {
+    return dayjs(a).isAfter(b) ? 1 : -1
 })
 let filterRoutes = ref<Post[]>([])
 filterCategory("Hard-Boiled-Wonderland")
 function filterCategory(str: string) {
-    filterRoutes.value = routes.filter((r) => r.categories === str)
+    filterRoutes.value = routes.filter((r) => r.path.includes(str.toLowerCase()))
 }
 </script>
 
@@ -79,6 +82,7 @@ a {
 h1 {
     margin-bottom: 0.5rem;
     color: initial;
+    font-size: 1.75rem;
 }
 
 .cateBox {

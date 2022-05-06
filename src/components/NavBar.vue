@@ -24,9 +24,9 @@
                 <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="ZhiHu">
                     <Icon icon="fa6-brands:zhihu" width="30" />
                 </a>
-                <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="RSS">
+                <!-- <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="RSS">
                     <Icon icon="bi:rss" width="20" />
-                </a>
+                </a> -->
                 <toggle-theme></toggle-theme>
             </el-space>
         </nav>
