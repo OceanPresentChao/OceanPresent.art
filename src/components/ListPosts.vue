@@ -1,14 +1,14 @@
 <template>
     <div>
         <div class="cateBox">
-            <span>
+            <div>
                 <a href="#" @click.prevent="filterCategory('Hard-Boiled-Wonderland')">冷酷仙境</a>
                 <Icon icon="noto:wind-chime" />
-            </span>
-            <span>
+            </div>
+            <div>
                 <a href="#" @click.prevent="filterCategory('End-of-the-World')">世界尽头</a>
                 <Icon icon="noto-v1:maple-leaf" />
-            </span>
+            </div>
         </div>
         <transition-group name="trans" leave-active-class="list-leave-active">
             <div v-for="route in filterRoutes" :key="route.path" class="item">
@@ -60,7 +60,7 @@ const routes: Post[] = router.getRoutes().filter((item) =>
         ...(item.meta.frontmatter as Object)
     }
 }).sort((a: any, b: any) => {
-    return dayjs(a).isAfter(b) ? 1 : -1
+    return dayjs(a.time).isAfter(b.time) ? -1 : 1
 })
 let filterRoutes = ref<Post[]>([])
 filterCategory("Hard-Boiled-Wonderland")
@@ -88,9 +88,10 @@ h1 {
 .cateBox {
     font-size: 2rem;
     margin-bottom: 2rem;
+    display: flex;
 }
 
-.cateBox span {
+.cateBox div {
     margin-right: 2rem;
 }
 

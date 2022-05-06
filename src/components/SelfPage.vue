@@ -42,6 +42,7 @@ const AVATAR_URL = "http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640"
 <style scoped>
 .wrapper {
     display: flex;
+    flex-flow: row wrap;
 }
 
 .avatar {
@@ -55,6 +56,7 @@ const AVATAR_URL = "http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640"
 
 .desc {
     margin-left: 2rem;
+    flex: 1;
 }
 
 .desc p {

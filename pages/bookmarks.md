@@ -51,6 +51,7 @@ subtitle: Some of my favorite websites/tools that I recommend
 - [World Vector Logo](https://worldvectorlogo.com/)
 - [Icônes](http://icones.js.org/)
 - [Icon Store](https://www.iconstore.co/)
+- [Icons8](https://icons8.com/)
 - [Unsplash](https://unsplash.com/)
 - [WallHaven](https://wallhaven.cc/)
 

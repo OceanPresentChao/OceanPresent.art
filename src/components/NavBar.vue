@@ -3,9 +3,8 @@
         <router-link to="/" class="avater">
             <span>OceanPresent</span>
         </router-link>
-        <div class="spacer"></div>
         <nav class="nav">
-            <el-space size="large" style="align-items:center;">
+            <el-space size="large" style="align-items:center;" :wrap="true">
                 <router-link to="/posts" title="blog">
                     <span>Blog</span>
                 </router-link>
@@ -49,6 +48,7 @@
 .avater {
     flex: none;
     margin-left: 2rem;
+    margin-right: auto;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;
 }
@@ -75,9 +75,5 @@
 .prose .nav a:hover {
     opacity: 1;
     text-decoration-color: inherit;
-}
-
-.spacer {
-    flex: 1;
 }
 </style>

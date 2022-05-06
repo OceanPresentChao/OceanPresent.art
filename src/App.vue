@@ -35,6 +35,11 @@ a {
   color: currentColor;
 }
 
+h1,
+h2 {
+  word-break: break-all;
+}
+
 .trans-move {
   transition: transform 0.5s ease;
 }
