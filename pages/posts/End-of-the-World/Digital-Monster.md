@@ -1,7 +1,7 @@
 ---
 title: 好想化作一只蝴蝶，乘着微风展翅高飞
 author: OceanPresent
-time: '2021-11-17'
+time: '2020-11-17'
 lang: zh-CN
 categories: End-of-the-World
 ---

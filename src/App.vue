@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { isDark } from './utils/config';
 </script>
 
 <template>
@@ -13,6 +13,7 @@
     <Footer></Footer>
     <el-backtop :right="50" :bottom="50" />
   </main>
+  <Sakura v-if="isDark"></Sakura>
 </template>
 
 <style>
@@ -37,7 +38,7 @@ a {
 
 h1,
 h2 {
-  word-break: break-all;
+  word-break: normal;
 }
 
 .trans-move {
