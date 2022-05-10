@@ -1,3 +1,6 @@
+---
+title: Friends 
+---
 # My Friends
 
 <FriendTree friend_name="洛玖只" friend_desc="JaCppPyRugothon，JsCssHtSpVuBoot。All_In_One!"

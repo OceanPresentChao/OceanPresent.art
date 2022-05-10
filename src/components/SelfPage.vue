@@ -29,8 +29,8 @@
                 you can hear me.</p>
             <p>Outside of programing,I also like watching animation and drawing.I dream of compositing my own animation
                 one day.</p>
-            <p>If you have same hobbies with me,I really welcome you to contact with me,waiting to progress together
-                with you!</p>
+            <p>If you have same passion with me,welcome you to contact me,waiting to make progress together with you
+                always!</p>
         </div>
     </div>
 </template>

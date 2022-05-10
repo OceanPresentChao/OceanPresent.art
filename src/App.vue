@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { isDark } from './utils/config';
+const route = useRoute()
+watch(route, (nv, ov) => {
+  if (nv.path === '/') {
+    document.title = "OceanPresent"
+  } else {
+    document.title = "OceanPresent - " + nv.meta.frontmatter.title
+  }
+})
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 ---
-title: Bookmarks - OceanPresent
+title: Bookmarks
 display: Bookmarks
 subtitle: Some of my favorite websites/tools that I recommend
 ---

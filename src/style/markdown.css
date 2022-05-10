@@ -77,7 +77,7 @@ html.dark {
 }
 
 .prose a code {
-    color: inherit;
+    color: currentColor;
 }
 
 .prose hr {
