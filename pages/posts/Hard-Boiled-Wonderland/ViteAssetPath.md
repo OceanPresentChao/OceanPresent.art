@@ -15,6 +15,8 @@ lang: zh-CN
 
 对于一个再简单不过的helloworld的vue项目，我们将其打包后打开dist文件，打开控制台可以看到浏览器报错：
 
+![](http://res.oceanpresent.art/blog/202205122325400.png)
+
 这份错误是谷歌浏览器本身造成的的，谷歌浏览器会限制访问本地文件。Chrome 正在计划禁止从非安全网站发起的专用网络请求，目的是保护用户免受针对专用网络上的路由器和其他设备的跨站点请求伪造 (CSRF) 攻击：
 
 - 从 Chrome 94 开始阻止来自不安全公共网站的私有网络请求。
@@ -28,7 +30,11 @@ lang: zh-CN
 
 我们使用vscode的live server插件可以在本地申请端口启动一个服务器，打开之前的index.html文件
 
+![](http://res.oceanpresent.art/blog/202205122325402.png)
+
 很遗憾，结果依然不能正常运行，同时浏览器报出了别的错误，新的404错误主要是说找不到资源。我们查看http的申请记录
+
+![](http://res.oceanpresent.art/blog/202205122325403.png)
 
 可以看到申请的资源URL为/assets/xxx.js。但显然我们资源正确的地址应该是/dist/assets/xxx.js
 
@@ -46,9 +52,13 @@ liveserver插件开启的本地服务器的根目录是当前工作区项目文�
 
 修改vite编译配置的静态资源放置路径，将默认的base:'/'修改为base:'./'。这样index.html就会去寻找同级目录下的assets文件夹
 
+![](http://res.oceanpresent.art/blog/202205122334112.png)
+
 ### 方法二：
 
 修改liveserver的插件配置，将本地服务器的根地址从默认的项目文件夹修改为'/dist'。
+
+![](http://res.oceanpresent.art/blog/202205122333578.png)
 
 这个方法并不是一个好的解决措施，因为修改的非常隐式，在别人的电脑上依然是打不开的，而且他们很难知道你是如何成功打开的。当然这个方法可以证明我们真正了解了该问题的原理。
 

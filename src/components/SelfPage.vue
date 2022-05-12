@@ -26,10 +26,10 @@
             </p>
             <p>I concentrate on Frontend technology.We learn knowledge to understand the world better,but the key is to
                 make the world better.I hope that I can dream up more interesting ideas and make them come true,so that
-                you can hear me.</p>
+                you can hear me someday.</p>
             <p>Outside of programing,I also like watching animation and drawing.I dream of compositing my own animation
                 one day.</p>
-            <p>If you have same passion with me,welcome you to contact me,waiting to make progress together with you
+            <p>If you have same passion with me,welcome to contact me,waiting to make progress together with you
                 always!</p>
         </div>
     </div>

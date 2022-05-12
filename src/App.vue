@@ -67,5 +67,7 @@ h2 {
 .img-center img {
   display: block;
   margin: auto;
+  max-width: 100%;
+  height: auto;
 }
 </style>
