@@ -39,6 +39,15 @@ watch(route, (nv, ov) => {
   padding: 2.5rem 1.75rem;
 }
 
+@media screen and (max-device-width: 768px) {
+  .main {
+    padding: 2.5rem 0;
+  }
+}
+
+
+
+
 a {
   text-decoration: none;
   color: currentColor;

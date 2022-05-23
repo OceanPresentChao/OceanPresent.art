@@ -44,7 +44,7 @@
     margin: 0;
     z-index: 27;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     font-size: large;
     align-items: center;
 }

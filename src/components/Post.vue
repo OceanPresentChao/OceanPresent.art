@@ -28,6 +28,14 @@ console.log(props);
     margin: 0 auto;
 }
 
+@media screen and (max-device-width: 768px) {
+    .post {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
 .prose .post a {
     border: none;
 }
