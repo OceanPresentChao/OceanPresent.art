@@ -3,7 +3,7 @@ title: Bookmarks
 display: Bookmarks
 subtitle: Some of my favorite websites/tools that I recommend
 ---
-
+[[toc]]
 ### Font
 
 - [Font Playground](https://play.typedetail.com/)
@@ -23,11 +23,6 @@ subtitle: Some of my favorite websites/tools that I recommend
 
 - [Tailwind Gradient Designer](https://tailwind-gradient-designer.csspost.com/)
 - [Open UI](https://open-ui.org/) - Comparison between different component frameworks
-
-### Content
-
-- [Hemingway](http://www.hemingwayapp.com/) - Text Editor
-- [Reactive Resume](https://rxresu.me/)
 
 ### Dev
 

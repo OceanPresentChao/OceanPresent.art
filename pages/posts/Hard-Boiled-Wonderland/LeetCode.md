@@ -8,6 +8,8 @@ categories: Hard-Boiled-Wonderland
 
 # MyLeetCode
 
+[[toc]]
+
 ## 回溯
 
 ### 组合

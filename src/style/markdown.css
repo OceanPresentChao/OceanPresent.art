@@ -165,27 +165,28 @@ h6:focus .header-anchor {
 
 .table-of-contents {
     position: fixed;
-    top: 80px;
-    padding-top: 70px;
-    font-size: 0.8em;
-    right: 10px;
-    width: 200px;
-    bottom: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
+    overflow-y: scroll;
+    right: 2vw;
+    top: 18vh;
+    max-height: 70vh;
+    max-width: 30%;
     opacity: 0;
-    transition: all .4s ease-out;
+    transition: all 0.4s ease-out;
 }
 
 .table-of-contents:hover {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
-.table-of-contents ul>li::before {
-    display: none;
+.table-of-contents ul {
+    counter-reset: list-item;
 }
 
-.table-of-contents ul>li {
-    padding-left: 0.8rem;
+.table-of-contents li {
+    display: block;
+    counter-increment: list-item;
+}
+
+.table-of-contents li:before {
+    content: counters(list-item, '.') ' ';
 }

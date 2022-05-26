@@ -4,7 +4,7 @@ author: OceanPresent
 time: '2022-05-07'
 lang: zh-CN
 ---
-
+[[toc]]
 # 为什么vite打包后dist文件无法直接运行
 
 ## 起因

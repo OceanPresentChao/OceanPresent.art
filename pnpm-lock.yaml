@@ -17,6 +17,7 @@ specifiers:
   markdown-it-anchor: ^8.6.3
   markdown-it-link-attributes: ^4.0.0
   markdown-it-prism: ^2.2.4
+  markdown-it-toc-done-right: ^4.2.0
   nprogress: ^0.2.0
   prism-theme-vars: ^0.2.2
   prismjs: ^1.28.0
@@ -52,6 +53,7 @@ devDependencies:
   markdown-it-anchor: 8.6.3_ea7kj7wzjkld5jo2noyjqxi764
   markdown-it-link-attributes: 4.0.0
   markdown-it-prism: 2.2.4
+  markdown-it-toc-done-right: 4.2.0
   nprogress: 0.2.0
   prismjs: 1.28.0
   typescript: mirrors.tencent.com/typescript/4.5.5
@@ -65,6 +67,17 @@ devDependencies:
   vue-tsc: mirrors.tencent.com/vue-tsc/0.31.4_typescript@4.5.5
 
 packages:
+
+  /@babel/helper-validator-identifier/7.16.7:
+    resolution: {integrity: sha512-hsEnFemeiW4D08A5gUAZxLBTXpZ39P+a+DGDsHw1yxqyQ/jzFEnxf5uTEGp+3bzAbNOxU1paTgYS4ECU/IgfDw==}
+    engines: {node: '>=6.9.0'}
+
+  /@babel/types/7.17.10:
+    resolution: {integrity: sha512-9O26jG0mBYfGkUYCYZRnBwbVLd1UZOICEr2Em6InB6jVfsAv1GKgwXHmrSg+WFWDmeKTA6vyTZiN8tCSM5Oo3A==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/helper-validator-identifier': 7.16.7
+      to-fast-properties: 2.0.0
 
   /@element-plus/icons-vue/1.1.4_vue@3.2.33:
     resolution: {integrity: sha512-Iz/nHqdp1sFPmdzRwHkEQQA3lKvoObk8azgABZ81QUOpW9s/lUyQVUSh0tNtEPZXQlKwlSh7SPgoVxzrE0uuVQ==}
@@ -219,14 +232,12 @@ packages:
       '@vue/shared': mirrors.tencent.com/@vue/shared/3.2.33
       estree-walker: mirrors.tencent.com/estree-walker/2.0.2
       source-map: mirrors.tencent.com/source-map/0.6.1
-    dev: false
 
   /@vue/compiler-dom/3.2.33:
     resolution: {integrity: sha512-GhiG1C8X98Xz9QUX/RlA6/kgPBWJkjq0Rq6//5XTAGSYrTMBgcLpP9+CnlUg1TFxnnCVughAG+KZl28XJqw8uQ==}
     dependencies:
       '@vue/compiler-core': 3.2.33
       '@vue/shared': mirrors.tencent.com/@vue/shared/3.2.33
-    dev: false
 
   /@vue/compiler-sfc/3.2.33:
     resolution: {integrity: sha512-H8D0WqagCr295pQjUYyO8P3IejM3vEzeCO1apzByAEaAR/WimhMYczHfZVvlCE/9yBaEu/eu9RdiWr0kF8b71Q==}
@@ -241,14 +252,12 @@ packages:
       magic-string: mirrors.tencent.com/magic-string/0.25.9
       postcss: mirrors.tencent.com/postcss/8.4.13
       source-map: mirrors.tencent.com/source-map/0.6.1
-    dev: false
 
   /@vue/compiler-ssr/3.2.33:
     resolution: {integrity: sha512-XQh1Xdk3VquDpXsnoCd7JnMoWec9CfAzQDQsaMcSU79OrrO2PNR0ErlIjm/mGq3GmBfkQjzZACV+7GhfRB8xMQ==}
     dependencies:
       '@vue/compiler-dom': 3.2.33
       '@vue/shared': mirrors.tencent.com/@vue/shared/3.2.33
-    dev: false
 
   /@vue/reactivity-transform/3.2.33:
     resolution: {integrity: sha512-4UL5KOIvSQb254aqenW4q34qMXbfZcmEsV/yVidLUgvwYQQ/D21bGX3DlgPUGI3c4C+iOnNmDCkIxkILoX/Pyw==}
@@ -258,14 +267,12 @@ packages:
       '@vue/shared': mirrors.tencent.com/@vue/shared/3.2.33
       estree-walker: mirrors.tencent.com/estree-walker/2.0.2
       magic-string: mirrors.tencent.com/magic-string/0.25.9
-    dev: false
 
   /@vue/runtime-core/3.2.33:
     resolution: {integrity: sha512-N2D2vfaXsBPhzCV3JsXQa2NECjxP3eXgZlFqKh4tgakp3iX6LCGv76DLlc+IfFZq+TW10Y8QUfeihXOupJ1dGw==}
     dependencies:
       '@vue/reactivity': mirrors.tencent.com/@vue/reactivity/3.2.33
       '@vue/shared': mirrors.tencent.com/@vue/shared/3.2.33
-    dev: false
 
   /@vue/runtime-dom/3.2.33:
     resolution: {integrity: sha512-LSrJ6W7CZTSUygX5s8aFkraDWlO6K4geOwA3quFF2O+hC3QuAMZt/0Xb7JKE3C4JD4pFwCSO7oCrZmZ0BIJUnw==}
@@ -273,7 +280,6 @@ packages:
       '@vue/runtime-core': 3.2.33
       '@vue/shared': mirrors.tencent.com/@vue/shared/3.2.33
       csstype: mirrors.tencent.com/csstype/2.6.20
-    dev: false
 
   /@vue/server-renderer/3.2.33_vue@3.2.33:
     resolution: {integrity: sha512-4jpJHRD4ORv8PlbYi+/MfP8ec1okz6rybe36MdpkDrGIdEItHEUyaHSKvz+ptNEyQpALmmVfRteHkU9F8vxOew==}
@@ -283,11 +289,9 @@ packages:
       '@vue/compiler-ssr': 3.2.33
       '@vue/shared': mirrors.tencent.com/@vue/shared/3.2.33
       vue: mirrors.tencent.com/vue/3.2.33
-    dev: false
 
   /@vue/shared/3.2.33:
     resolution: {integrity: sha512-UBc1Pg1T3yZ97vsA2ueER0F6GbJebLHYlEi4ou1H5YL4KWvMOOWwpYo9/QpWq93wxKG6Wo13IY74Hcn/f7c7Bg==}
-    dev: false
 
   /@vue/tsconfig/0.1.3_@types+node@16.11.33:
     resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
@@ -478,6 +482,15 @@ packages:
     resolution: {integrity: sha512-HlMGZTEsBrXrivr64eZ/EO0NQM8H8DuSENRok9d+Jtvq8hOLzrxfsAT9U94K3KOGk2XgCmkaI2KD8hX7F97lvA==}
     engines: {node: '>=12'}
     cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /esbuild-linux-mips64le/0.14.38:
+    resolution: {integrity: sha512-qd1dLf2v7QBiI5wwfil9j0HG/5YMFBAmMVmdeokbNAMbcg49p25t6IlJFXAeLzogv1AvgaXRXvgFNhScYEUXGQ==}
+    engines: {node: '>=12'}
+    cpu: [mips64el]
     os: [linux]
     requiresBuild: true
     dev: true
@@ -700,6 +713,10 @@ packages:
       prismjs: 1.28.0
     dev: true
 
+  /markdown-it-toc-done-right/4.2.0:
+    resolution: {integrity: sha512-UB/IbzjWazwTlNAX0pvWNlJS8NKsOQ4syrXZQ/C72j+jirrsjVRT627lCaylrKJFBQWfRsPmIVQie8x38DEhAQ==}
+    dev: true
+
   /mdurl/1.0.1:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
 
@@ -842,6 +859,10 @@ packages:
     resolution: {integrity: sha1-5SEekiQ2n7uB1jOi8ABE3IztrZI=}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /to-fast-properties/2.0.0:
+    resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}
+    engines: {node: '>=4'}
 
   /token-stream/1.0.0:
     resolution: {integrity: sha1-zCAOqyYT9BZtJ/+a/HylbUnfbrQ=}
@@ -1085,6 +1106,8 @@ packages:
     version: 7.17.10
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.10
 
   mirrors.tencent.com/@babel/types/7.17.10:
     resolution: {integrity: sha512-9O26jG0mBYfGkUYCYZRnBwbVLd1UZOICEr2Em6InB6jVfsAv1GKgwXHmrSg+WFWDmeKTA6vyTZiN8tCSM5Oo3A==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/@babel%2ftypes/-/types-7.17.10.tgz}
@@ -1364,7 +1387,6 @@ packages:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/csstype/-/csstype-2.6.20.tgz}
     name: csstype
     version: 2.6.20
-    dev: false
 
   mirrors.tencent.com/dayjs/1.11.1:
     resolution: {integrity: sha512-ER7EjqVAMkRRsxNCC5YqJ9d9VQYuWdGt7aiH2qA5R5wt8ZmWaP2dLUSIK6y/kVzLMlmh1Tvu5xUf4M/wdGJ5KA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/dayjs/-/dayjs-1.11.1.tgz}
@@ -1553,17 +1575,6 @@ packages:
       is-symbol: mirrors.tencent.com/is-symbol/1.0.4
     dev: true
 
-  mirrors.tencent.com/esbuild-linux-mips64le/0.14.38:
-    resolution: {integrity: sha512-qd1dLf2v7QBiI5wwfil9j0HG/5YMFBAmMVmdeokbNAMbcg49p25t6IlJFXAeLzogv1AvgaXRXvgFNhScYEUXGQ==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/esbuild-linux-mips64le/-/esbuild-linux-mips64le-0.14.38.tgz}
-    name: esbuild-linux-mips64le
-    version: 0.14.38
-    engines: {node: '>=12'}
-    cpu: [mips64el]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   mirrors.tencent.com/esbuild/0.14.38:
     resolution: {integrity: sha512-12fzJ0fsm7gVZX1YQ1InkOE5f9Tl7cgf6JPYXRJtPIoE0zkWAbHdPHVPPaLi9tYAcEBqheGzqLn/3RdTOyBfcA==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/esbuild/-/esbuild-0.14.38.tgz}
     name: esbuild
@@ -1582,7 +1593,7 @@ packages:
       esbuild-linux-64: 0.14.38
       esbuild-linux-arm: 0.14.38
       esbuild-linux-arm64: 0.14.38
-      esbuild-linux-mips64le: mirrors.tencent.com/esbuild-linux-mips64le/0.14.38
+      esbuild-linux-mips64le: 0.14.38
       esbuild-linux-ppc64le: 0.14.38
       esbuild-linux-riscv64: 0.14.38
       esbuild-linux-s390x: 0.14.38
@@ -2519,7 +2530,6 @@ packages:
       '@vue/runtime-dom': 3.2.33
       '@vue/server-renderer': 3.2.33_vue@3.2.33
       '@vue/shared': 3.2.33
-    dev: false
 
   mirrors.tencent.com/webpack-virtual-modules/0.4.3:
     resolution: {integrity: sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==, registry: http://mirrors.cloud.tencent.com/npm/, tarball: http://mirrors.tencent.com/npm/webpack-virtual-modules/-/webpack-virtual-modules-0.4.3.tgz}

@@ -5,6 +5,7 @@ time: 2019-12-2
 lang: zh-CN
 categories: End-of-the-World
 ---
+[[toc]]
 
 # 爱，是心头一场久不融化的雪
 

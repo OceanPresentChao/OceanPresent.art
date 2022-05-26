@@ -9,6 +9,7 @@ import matter from "gray-matter"
 import Anchor from 'markdown-it-anchor';
 import prism from 'markdown-it-prism';
 import LinkAttributes from 'markdown-it-link-attributes';
+import Toc from 'markdown-it-toc-done-right';
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-typescript'
@@ -86,6 +87,7 @@ export default defineConfig({
             rel: 'noopener',
           },
         })
+        md.use(Toc, { listType: "ul" })
       }
     })
   ],

@@ -4,6 +4,7 @@ author: davidtheclark
 time: '2022-05-07'
 lang: zh-CN
 ---
+[[toc]]
 # It's Time for Everyone to Learn About PostCSS
 
 > 本文翻译自[It's Time for Everyone to Learn About PostCSS. What It Really Is; What It Really Does](https://davidtheclark.com/its-time-for-everyone-to-learn-about-postcss/)
