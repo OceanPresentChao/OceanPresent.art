@@ -1,7 +1,7 @@
 ---
 title: 为什么vite打包后dist文件无法直接运行
 author: OceanPresent
-time: '2022-05-07'
+time: '2022-05-01'
 lang: zh-CN
 ---
 [[toc]]
