@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="avatar">
-            <el-avatar :size="200" shape="circle" :src="AVATAR_URL" fit="cover"></el-avatar>
+            <Avatar :size="200"  :src="AVATAR_URL" desc="OceanPresent"></Avatar>
             <h1>OceanPresent</h1>
             <h2>Can you hear me?</h2>
             <div class="icon-box">
@@ -43,6 +43,12 @@ const AVATAR_URL = "http://q1.qlogo.cn/g?b=qq&nk=1255342403&s=640"
 .wrapper {
     display: flex;
     flex-flow: row wrap;
+}
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        column-gap: 2rem;
+    }
 }
 
 .avatar {

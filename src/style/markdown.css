@@ -85,12 +85,6 @@ html.dark {
     margin: 2em auto;
 }
 
-html.dark .prose {
-    --fg: #bbb;
-    --fg-deep: #ddd;
-    --fg-deeper: #fff;
-}
-
 a.item {
     transition: 0.2s all ease-out;
     text-decoration: none;
@@ -157,7 +151,7 @@ h6:focus .header-anchor {
     content: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 728px) {
     .table-of-contents {
         display: none;
     }

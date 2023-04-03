@@ -19,7 +19,6 @@ watch(route, (nv, ov) => {
       </transition>
     </router-view>
     <Footer></Footer>
-    <el-backtop :right="50" :bottom="50" />
   </main>
   <Sakura v-if="isDark"></Sakura>
 </template>
@@ -36,17 +35,8 @@ watch(route, (nv, ov) => {
 }
 
 .main {
-  padding: 2.5rem 1.75rem;
+  padding: 2.5rem 0;
 }
-
-@media screen and (max-device-width: 768px) {
-  .main {
-    padding: 2.5rem 0;
-  }
-}
-
-
-
 
 a {
   text-decoration: none;

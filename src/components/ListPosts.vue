@@ -12,28 +12,28 @@
         </div>
         <transition-group name="trans" leave-active-class="list-leave-active">
             <div v-for="route in filterRoutes" :key="route.path" class="item">
-                <el-card :body-style="{ padding: '0px' }" shadow="hover">
-                    <template #header>
-                        <h1>
-                            <router-link :to="route.path">{{ route.title || "Untitled Blog" }}</router-link>
-                        </h1>
-                    </template>
-                    <div style="padding: 14px;vertical-align:middle;" class="post-info">
-                        <span>
-                            <Icon icon="healthicons:i-schedule-school-date-time" width="30"
-                                style="position:relative;top:0.5rem" />
-                            {{ route.time || "它遗失在时间的长河里..." }}
-                        </span>
-                        <span>
-                            <Icon icon="bx:book-reader" width="30" style="position:relative;top:0.5rem" />
-                            {{ route.author || "佚名" }}
-                        </span>
-
-                        <el-button type="text">
-                            <router-link :to="route.path">Read Me...</router-link>
-                        </el-button>
+                <div>
+                    <div class="postTitle">
+                        <router-link :to="route.path">{{ route.title || "Untitled Blog" }}</router-link>
                     </div>
-                </el-card>
+                    <div class="postInfo">
+                        <div>
+                            <span>
+                                <Icon icon="healthicons:i-schedule-school-date-time" width="30"
+                                    style="position:relative;top:0.5rem" />
+                                {{ route.time || "它遗失在时间的长河里..." }}
+                            </span>
+                            <span style="margin:5px;"></span>
+                            <span>
+                                <Icon icon="bx:book-reader" width="30" style="position:relative;top:0.5rem" />
+                                {{ route.author || "佚名" }}
+                            </span>
+                        </div>
+                        <div >
+                            <router-link :to="route.path">Read Me...</router-link>
+                        </div>
+                    </div>
+                </div>
             </div>
         </transition-group>
     </div>
@@ -64,6 +64,7 @@ const routes: Post[] = router.getRoutes().filter((item) =>
 })
 let filterRoutes = ref<Post[]>([])
 filterCategory("Hard-Boiled-Wonderland")
+
 function filterCategory(str: string) {
     filterRoutes.value = routes.filter((r) => r.path.includes(str.toLowerCase()))
 }
@@ -79,10 +80,14 @@ a {
     color: currentColor
 }
 
-h1 {
-    margin-bottom: 0.5rem;
-    color: initial;
-    font-size: 1.75rem;
+.postTitle {
+    font-size: x-large;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.postInfo {
+    vertical-align:middle;
 }
 
 .cateBox {

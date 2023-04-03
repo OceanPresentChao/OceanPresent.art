@@ -1,10 +1,10 @@
 <template>
-    <div style="display:flex;flex-wrap:nowrap;align-items: center;">
+    <div style="display:flex;flex-wrap:nowrap;align-items: center;margin:1rem 0;">
         <div style="flex:none;margin-right: 2rem;">
-            <el-avatar size="large" shape="circle" :src="avatar_url" fit="cover"></el-avatar>
+            <Avatar :src="avatar_url" :size="100"></Avatar>
         </div>
         <div>
-            <h2><a :href="address" target="_blank">{{ friend_name }}</a></h2>
+            <p><a :href="address" target="_blank">{{ friend_name }}</a></p>
             <p>{{ friend_desc }}</p>
         </div>
     </div>
@@ -22,5 +22,12 @@ defineProps({
 <style scoped>
 h2 {
     margin-top: 1rem;
+}
+
+.avatar {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-right: 2rem;
 }
 </style>

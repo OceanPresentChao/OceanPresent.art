@@ -1,10 +1,9 @@
 <template>
     <header class="header prose">
-        <router-link to="/" class="avater">
+        <router-link to="/" class="avatar">
             <span>OceanPresent</span>
         </router-link>
         <nav class="nav">
-            <el-space size="large" style="align-items:center;" :wrap="true">
                 <router-link to="/posts" title="blog">
                     <span>Blog</span>
                 </router-link>
@@ -26,12 +25,7 @@
                 <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="ZhiHu">
                     <Icon icon="fa6-brands:zhihu" width="30" />
                 </a>
-                <!-- <a href="https://www.zhihu.com/people/chao-hai-bo-90" target="_blank" title="RSS">
-                    <Icon icon="bi:rss" width="20" />
-                </a> -->
-
                 <toggle-theme></toggle-theme>
-            </el-space>
         </nav>
     </header>
 </template>
@@ -49,12 +43,23 @@
     align-items: center;
 }
 
-.avater {
-    flex: none;
+.avatar {
+    flex: 0;
     margin-left: 2rem;
     margin-right: auto;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5rem;
+}
+
+.nav {
+    flex:none;
+    display: flex;
+}
+
+@media screen and (min-width:728px) {
+    .nav a{
+        margin: 0 10px;
+    }
 }
 
 .prose .nav {

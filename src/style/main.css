@@ -6,16 +6,13 @@
 
 html {
     background-color: var(--c-bg);
+    overflow: scroll;
 }
 
 html.dark {
     --c-bg: #050505;
     --c-scrollbar: #111;
     --c-scrollbar-hover: #222;
-}
-
-html {
-    overflow: scroll;
 }
 
 #nprogress {
@@ -31,10 +28,6 @@ html {
     left: 0;
     width: 100%;
     height: 2px;
-}
-
-* {
-    scrollbar-color: var(--c-scrollbar) var(--c-bg);
 }
 
 .sponsor-avatar {
