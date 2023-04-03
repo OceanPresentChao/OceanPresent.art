@@ -7,9 +7,14 @@ on:
       - master
 jobs:
   build:
-    runs-on: centos-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    # 在工作流中安装node环境（必需，这样才能在后续工作流程中运行 npm install 等指令，否则会报错）
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16 # 指定node版本
     - name: Install npm dependencies
       run: npm install
     - name: Run build task
