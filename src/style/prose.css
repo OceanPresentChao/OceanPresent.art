@@ -5,7 +5,7 @@
 }
 
 .prose [class~="lead"] {
-    color: #4b5563;
+    color: var(--fg-deeper);
     font-size: 1.25em;
     line-height: 1.6;
     margin-top: 1.2em;
@@ -68,7 +68,7 @@
     content: counter(list-item, var(--list-counter-style, decimal)) ".";
     position: absolute;
     font-weight: 400;
-    color: #6b7280;
+    color: var(--fg);
     left: 0;
 }
 

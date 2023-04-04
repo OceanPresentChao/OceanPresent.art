@@ -29,6 +29,9 @@ html:not(.dark) {
     --prism-decorator: #bd8f8f;
     --prism-regex: #ab5e3f;
     --prism-json-property: #698c96;
+    --fg: #393a34;
+    --fg-deep: #292926;
+    --fg-deeper: #1e1e1d;
 }
 
 html.dark {
@@ -55,13 +58,12 @@ html.dark {
     --prism-line-number-gutter: #eeeeee;
     --prism-line-highlight-background: #444444;
     --prism-selection-background: #444444;
+    --fg: #aeaba2;
+    --fg-deep: #beb9ac;
+    --fg-deeper: #c1bdb1;
 }
 
 .prose {
-    --fg: #555;
-    --fg-deep: #222;
-    --fg-deeper: #000;
-
     color: var(--fg);
 }
 
