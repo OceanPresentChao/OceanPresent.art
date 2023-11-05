@@ -6,9 +6,8 @@ lang: zh-CN
 ---
 
 [[toc]]
-# rCore Ch5
 
-### 进程
+# 进程
 
 ![](http://res.oceanpresent.art/blog/202311021251475.png)
 
@@ -18,16 +17,16 @@ lang: zh-CN
 
 ![](http://res.oceanpresent.art/blog/202311021251813.png)
 
-### 进程回收机制
+## 进程回收机制
 
 进当一个进程主动退出或出错退出的时候，在 exit_current_and_run_next 中会立即回收一部分资源并在进程控制块中保存退出码
 而需要等到它的父进程通过 waitpid 系统调用（与 fork/exec 两个系统调用放在相同位置）捕获到它的退出码之后，它的进程控制块才会被回收，从而该进程的所有资源都被回收。
 
-### 用户初始程序
+## 用户初始程序
 
 当内核初始化完毕之后，它会从可执行文件 initproc 中加载并执行用户初始程序 initproc，而用户初始程序 initproc中又会 fork 并 exec 来运行shell程序 user_shell 。这两个应用虽然都是在 CPU 的 U 特权级执行的，但是相比其他应用，它们要更加底层和基础。
 
-### 任务调度的idle流
+## 任务调度的idle流
 
 Processor 有一个不同的 idle 控制流，它运行在这个 CPU 核的启动栈上，功能是尝试从任务管理器中选出一个任务来在当前 CPU 核上执行。在内核初始化完毕之后，会通过调用 run_tasks 函数来进入 idle 控制流
 调度功能的主体是 run_tasks() 。它循环调用 fetch_task 直到顺利从任务管理器中取出一个任务，随后便准备通过任务切换的方式来执行

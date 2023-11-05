@@ -2,11 +2,11 @@
     <div>
         <div class="cateBox">
             <div>
-                <a href="#" @click.prevent="filterCategory('Hard-Boiled-Wonderland')">冷酷仙境</a>
+                <a href="#" @click.prevent="changeCategory('Hard-Boiled-Wonderland')">冷酷仙境</a>
                 <Icon icon="noto:wind-chime" />
             </div>
             <div>
-                <a href="#" @click.prevent="filterCategory('End-of-the-World')">世界尽头</a>
+                <a href="#" @click.prevent="changeCategory('End-of-the-World')">世界尽头</a>
                 <Icon icon="noto-v1:maple-leaf" />
             </div>
         </div>
@@ -62,12 +62,17 @@ const routes: Post[] = router.getRoutes().filter((item) =>
 }).sort((a: any, b: any) => {
     return dayjs(a.time).isAfter(b.time) ? -1 : 1
 })
-let filterRoutes = ref<Post[]>([])
-filterCategory("Hard-Boiled-Wonderland")
+const params = useUrlSearchParams('history')
 
-function filterCategory(str: string) {
-    filterRoutes.value = routes.filter((r) => r.path.includes(str.toLowerCase()))
+const filterRoutes = computed(()=>{
+    const category = params.category || 'Hard-Boiled-Wonderland'
+    return routes.filter((r) => r.path.includes(category.toString().toLowerCase()))
+})
+
+function changeCategory(str:string) {
+    params.category = str
 }
+
 </script>
 
 <style scoped>

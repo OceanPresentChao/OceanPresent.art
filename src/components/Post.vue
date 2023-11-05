@@ -1,5 +1,15 @@
 <template>
     <div class="post prose">
+    <header>
+    <div v-if="route.path.startsWith('/posts/')" >
+        <h1 
+        style="text-align: center;font-family:'Times New Roman', Times, serif;">
+        {{ props.frontmatter.title }}
+        </h1>
+        <hr style="width: 100%;"/>
+    </div>
+       
+    </header>
         <article ref="content" style="margin-bottom: 2rem;">
             <slot />
         </article>
@@ -15,7 +25,10 @@
 
 <script setup lang="ts">
 const props = defineProps({
-    frontmatter: Object,
+    frontmatter: {
+        type:Object,
+        required:true
+    },
 })
 const router = useRouter()
 const route = useRoute()

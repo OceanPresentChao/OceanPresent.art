@@ -6,7 +6,7 @@ lang: zh-CN
 ---
 
 [[toc]]
-# Peintre开发日志
+# 实现思路
 
 [Peintre项目GitHub地址](https://github.com/OceanPresentChao/Peintre)
 ## 如何实现多图层
