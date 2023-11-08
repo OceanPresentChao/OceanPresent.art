@@ -11,7 +11,7 @@
             </div>
         </div>
         <transition-group name="trans" leave-active-class="list-leave-active">
-            <div v-for="route in filterRoutes" :key="route.path" class="item">
+            <div v-for="route in displayRoutes" :key="route.path" class="item">
                 <div>
                     <div class="postTitle">
                         <router-link :to="route.path">{{ route.title || "Untitled Blog" }}</router-link>
@@ -29,13 +29,16 @@
                                 {{ route.author || "佚名" }}
                             </span>
                         </div>
-                        <div >
+                        <div>
                             <router-link :to="route.path">Read Me...</router-link>
                         </div>
                     </div>
                 </div>
             </div>
         </transition-group>
+        <footer>
+            <Pagination :current-page="curPage" :total="totalPosts" :page-size="pageSize" :on-page-change="onPageChange" />
+        </footer>
     </div>
 </template>
 
@@ -63,14 +66,26 @@ const routes: Post[] = router.getRoutes().filter((item) =>
     return dayjs(a.time).isAfter(b.time) ? -1 : 1
 })
 const params = useUrlSearchParams('history')
+const curPage = ref(1)
+const pageSize = ref(10)
 
-const filterRoutes = computed(()=>{
+const filterRoutes = computed(() => {
     const category = params.category || 'Hard-Boiled-Wonderland'
     return routes.filter((r) => r.path.includes(category.toString().toLowerCase()))
 })
+const displayRoutes = computed(() => {
+    const page = Number(params.page) || 1
+    return filterRoutes.value.slice((page - 1) * pageSize.value, page * pageSize.value)
+})
 
-function changeCategory(str:string) {
+const totalPosts = computed(() => filterRoutes.value.length)
+
+function changeCategory(str: string) {
     params.category = str
+}
+
+function onPageChange(page: number) {
+    params.page = String(page)
 }
 
 </script>
@@ -92,7 +107,7 @@ a {
 }
 
 .postInfo {
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .cateBox {
