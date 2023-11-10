@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div style="display:flex;justify-content:center;">
-            <div class="btn-container" style="margin-left: 5em;">
+        <div class="pagination-container">
+            <div class="btn-container">
                 <div v-for="i in displayIndex">
                     <div class="pagination-btn" v-if="i != '#'" @click="handlePageChange(Number(i))">
                         {{ i }}
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="jump-container">
                 <span style="margin:0 1em;">Go To</span>
                 <input type="text" class="jump-input" v-model="inputPage" @keyup.enter="handleInputEnter">
             </div>
@@ -70,6 +70,12 @@ function handleInputEnter() {
 </script>
 
 <style scoped>
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .pagination-btn {
     font-size: medium;
     cursor: pointer;
@@ -99,5 +105,15 @@ function handleInputEnter() {
 
 .jump-input:focus {
     outline-color: var(--prism-comment);
+}
+
+.jump-container {
+    margin-right: -3em;
+}
+
+@media screen and (max-device-width: 768px) {
+    .jump-container {
+        margin: auto;
+    }
 }
 </style>
