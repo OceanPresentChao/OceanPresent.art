@@ -1,7 +1,9 @@
 <template>
     <div style="display:flex;flex-wrap:nowrap;align-items: center;margin:1rem 0;">
         <div style="flex:none;margin-right: 2rem;">
-            <Avatar :src="avatar_url" :size="100"></Avatar>
+            <a :href="address" target="_blank">
+                <Avatar :src="avatar_url" :size="100"></Avatar>
+            </a>
         </div>
         <div>
             <p><a :href="address" target="_blank">{{ friend_name }}</a></p>

@@ -2,11 +2,11 @@
     <div>
         <div class="cateBox">
             <div>
-                <a href="#" @click.prevent="changeCategory('Hard-Boiled-Wonderland')">冷酷仙境</a>
+                <router-link to="/posts/hard-boiled-wonderland/">冷酷仙境</router-link>
                 <Icon icon="noto:wind-chime" />
             </div>
             <div>
-                <a href="#" @click.prevent="changeCategory('End-of-the-World')">世界尽头</a>
+                <router-link to="/posts/end-of-the-world/">世界尽头</router-link>
                 <Icon icon="noto-v1:maple-leaf" />
             </div>
         </div>
@@ -55,9 +55,12 @@ interface Post extends Object {
     path: string
 }
 const router = useRouter()
-const routes: Post[] = router.getRoutes().filter((item) =>
-    item.path.startsWith("/posts/")
-).map((item) => {
+const route = useRoute()
+const routes: Post[] = router.getRoutes().filter((item) => {
+    const match = item.path.match(/^\/posts\/([\w-!]+\/)+([\w-!]+)$/) || []
+    const postName = match[2]
+    return match && postName
+}).map((item) => {
     return {
         path: item.path,
         ...(item.meta.frontmatter as Object)
@@ -65,13 +68,11 @@ const routes: Post[] = router.getRoutes().filter((item) =>
 }).sort((a: any, b: any) => {
     return dayjs(a.time).isAfter(b.time) ? -1 : 1
 })
-const params = useUrlSearchParams('history')
 const curPage = ref(1)
 const pageSize = ref(10)
-
+const params = useUrlSearchParams('history')
 const filterRoutes = computed(() => {
-    const category = params.category || 'Hard-Boiled-Wonderland'
-    return routes.filter((r) => r.path.includes(category.toString().toLowerCase()))
+    return routes.filter((r) => r.path.startsWith(route.path))
 })
 const displayRoutes = computed(() => {
     const page = Number(params.page) || 1
@@ -79,10 +80,6 @@ const displayRoutes = computed(() => {
 })
 
 const totalPosts = computed(() => filterRoutes.value.length)
-
-function changeCategory(str: string) {
-    params.category = str
-}
 
 function onPageChange(page: number) {
     params.page = String(page)
