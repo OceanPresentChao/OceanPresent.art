@@ -12,41 +12,42 @@ lang: zh-CN
 
 1. LLM + Fine-tune： 对已有的大模型进行微调，这种方式成本高，效果不一定很好。可以参考 [大模型训练之微调篇 - 知乎](https://link.juejin.cn?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F625896377)
 2. LLM + 外挂知识库: 就是本文章着重介绍的，简单的介绍可以看[大模型外挂(向量)知识库 - 知乎](https://link.juejin.cn?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F633671394)
+
 # 环境搭建
 ## Python
 
 1. 安装conda
-```
+```bash
 brew install miniconda
 ```
 
 1. 创建自定义虚拟环境
-```
+```bash
 conda create -n [[name]]
 ```
 
 1. 激活虚拟环境
-```
+```bash
 conda activate [[name]]
 ```
 ## NLP相关依赖安装
 自然语言处理，简称 NLP，是人工智能的一个分支，它允许机器理解、处理和操纵人类语言。
 #### Pytorch
-```
+```bash
 conda install pytorch
 ```
 #### Numpy
-```
+```bash
 conda install numpy
 ```
 #### Scipy
-```
+```bash
 conda install scipy
 ```
 #### Gensim
 ⚠️gensim依赖于scipy和numpy，一定要先安装前两者再安装gensim
 是一个著名的开源 Python 库，用于从原始的非结构化的文本中，无监督地学习到文本隐层的主题向量表达。Gensim 支持包括TF-IDF，LDA和 word2vec在内的多种主题模型算法，因此很多算法工程师会将其作为主题建模的首选库。
-```
+```bash
 conda install -c conda-forge gensim
 ```
 # NLP基础概念
@@ -122,7 +123,7 @@ print(model.wv.most_similar('猫'))
 print(model.wv.most_similar('吉林大学'))
 ```
 结果：
-```
+```bash
 300
 4965.289603250014
 [('狗', 0.7110657691955566), ('猫咪', 0.671169638633728), ('小猫', 0.6650978326797485), ('兔子', 0.6501124501228333), ('小狗', 0.6325607895851135), ('小猫咪', 0.6306896805763245), ('犬', 0.6204975843429565), ('宠物猫', 0.6035280227661133), ('吉娃娃', 0.5858094096183777), ('宠物狗', 0.5799086093902588)]
@@ -221,7 +222,7 @@ def cosine_similarity(vec1, vec2):
 4. 获取大模型问答结果
 
 将知识加入大模型上下文常用prompt模板：
-```
+```bash
 使用以下背景段落来回答问题，如果段落内容不相关就返回未查到相关信息：
 背景：{{knowledge}}
 问题：{{userInput}}
@@ -320,8 +321,9 @@ streamlit run web_demo2.py
 # 源码
 [https://github.com/OceanPresentChao/llm-corpus](https://github.com/OceanPresentChao/llm-corpus)
 # 参考
-[https://juejin.cn/post/7238921093553373243?from=search-suggest#heading-6](https://juejin.cn/post/7238921093553373243?from=search-suggest#heading-6)
-[https://zhuanlan.zhihu.com/p/645655496](https://zhuanlan.zhihu.com/p/645655496)
-[https://github.com/GanymedeNil/document.ai](https://github.com/GanymedeNil/document.ai)
-[https://www.wehelpwin.com/article/4096](https://www.wehelpwin.com/article/4096)
-[https://segmentfault.com/a/1190000044333411#item-5-6](https://segmentfault.com/a/1190000044333411#item-5-6)
+
+- [https://juejin.cn/post/7238921093553373243?from=search-suggest#heading-6](https://juejin.cn/post/7238921093553373243?from=search-suggest#heading-6)
+- [https://zhuanlan.zhihu.com/p/645655496](https://zhuanlan.zhihu.com/p/645655496)
+- [https://github.com/GanymedeNil/document.ai](https://github.com/GanymedeNil/document.ai)
+- [https://www.wehelpwin.com/article/4096](https://www.wehelpwin.com/article/4096)
+- [https://segmentfault.com/a/1190000044333411#item-5-6](https://segmentfault.com/a/1190000044333411#item-5-6)

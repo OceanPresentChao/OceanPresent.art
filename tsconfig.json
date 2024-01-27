@@ -1,16 +1,20 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue"
   ],
   "compilerOptions": {
-    "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
     "allowJs": true,
     "baseUrl": ".",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "ES2015",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "lib": [
+      "ESNext"
+    ],
     "paths": {
       "@/*": [
         "./src/*"
@@ -20,10 +24,5 @@
       "vite/client",
       "vite-plugin-pages/client"
     ],
-  },
-  "references": [
-    {
-      "path": "./tsconfig.vite-config.json"
-    }
-  ]
+  }
 }
