@@ -6,13 +6,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     Avatar: typeof import('./components/Avatar.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
-    FriendTree: typeof import('./components/FriendTree.vue')['default']
+    FriendNode: typeof import('./components/FriendNode.vue')['default']
     ListPosts: typeof import('./components/ListPosts.vue')['default']
     NavBar: typeof import('./components/NavBar.vue')['default']
     Pagination: typeof import('./components/Pagination.vue')['default']
     Post: typeof import('./components/Post.vue')['default']
     Sakura: typeof import('./components/Sakura.vue')['default']
-    SelfPage: typeof import('./components/SelfPage.vue')['default']
     ToggleTheme: typeof import('./components/ToggleTheme.vue')['default']
   }
 }

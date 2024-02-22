@@ -8,14 +8,20 @@ const router = createRouter({
     history: createWebHistory()
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach((to) => {
     NProgress.start()
     if (to.path.replace(/^\/posts\//, "").indexOf("\/") === -1) {
         router.push("/posts")
     }
 })
 
-router.afterEach(() => {
+router.afterEach((to) => {
+    if (to.path === '/') {
+        document.title = "OceanPresent"
+    } else {
+        const title = (to.meta.frontmatter && to.meta.frontmatter.title) || to.meta.title
+        document.title = "OceanPresent - " + title
+    }
     NProgress.done()
 })
 

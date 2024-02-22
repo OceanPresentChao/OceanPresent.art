@@ -1,7 +1,8 @@
 <template>
     <div class="post prose">
         <header v-if="route.path.startsWith('/posts/') && !route.path.endsWith('/')">
-            <h1 style="text-align: center;font-family:'Times New Roman', Times, serif;">
+            <h1 v-if="props.frontmatter && props.frontmatter.title"
+                style="text-align: center;font-family:'Times New Roman', Times, serif;">
                 {{ props.frontmatter.title }}
             </h1>
             <hr style="width: 100%;" />
@@ -23,7 +24,6 @@
 const props = defineProps({
     frontmatter: {
         type: Object,
-        required: true
     },
 })
 const route = useRoute()

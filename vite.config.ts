@@ -49,6 +49,8 @@ export default defineConfig({
       importMode: 'async',
       extendRoute(route) {
         const path = resolve(__dirname, route.component.slice(1))
+        if(path.endsWith('.vue'))
+          return route
         const md = matter.read(path)
         const { data } = matter(md)
         route.meta = Object.assign(route.meta || {}, { frontmatter: data })
